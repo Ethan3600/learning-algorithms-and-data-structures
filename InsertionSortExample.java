@@ -1,7 +1,7 @@
 public class InsertionSortExample 
 {
 	/**
-	 * O(n)
+	 * O(n^2)
 	 * 
 	 * Sorts the array in accenting order
 	 * 
