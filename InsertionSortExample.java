@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class InsertionSortExample 
 {
 	/**
@@ -27,8 +29,59 @@ public class InsertionSortExample
 	
     public static void main(String[] args) 
     {
-    	int[] arr = {3, 1, 2, 4, 5, 6};
-    	arr = insertionSort(arr);
-    	System.out.println("done");
+//    	int[] arr = {3, 1, 2, 4, 5, 6};
+	
+	// ===== CONTROL ===== //
+	    int amountOfIterations = 1000000;
+	    int maxArrayLength = 10000;
+	 // ================= //
+	 
+	 long sumOfTime = 0;
+	    
+	 for(int i = 0; i < amountOfIterations; i++)
+	 {
+	     Random rg = new Random();
+	     int r = rg.nextInt(maxArrayLength);
+	     int[] a = randomArrayGenerator(r + 1); // add 1 so it's never 0
+	     
+	     long startTime = System.nanoTime();
+	     a = insertionSort(a);
+	     long endTime = System.nanoTime();
+
+	     for(int k : a)
+	     {
+//		 System.out.print(k + " ");
+	     }
+	     
+	     sumOfTime += endTime - startTime;
+	     
+//	     System.out.print("\n" + "It took " + (endTime - startTime) + " nanoseconds");
+//	     System.out.print("\n");
+	 }
+	 
+	 long averageTime = sumOfTime/amountOfIterations;
+	 System.out.println("AVERAGE TIME: " + averageTime);
     }
+    
+ // ============================ UTILITIES ======================== //
+	
+ 	public static int[] randomArrayGenerator(int length)
+ 	{
+ 	    int[] a = new int[length];
+ 	    for (int i = 1; i <= length; i++)
+ 	    {
+ 	        a[i-1] = i;
+ 	    }
+
+ 	    Random rg = new Random();
+ 	    int tmp;
+ 	    for (int i = length-1; i > 0; i--)
+ 	    {
+ 	        int r = rg.nextInt(i+1);
+ 	        tmp = a[r];
+ 	        a[r] = a[i];
+ 	        a[i] = tmp;
+ 	    }
+ 	    return a;
+ 	}
 }
