@@ -18,21 +18,21 @@ public class Node implements NodeInterface
 	this.data = data;
     }
 
-    @Override
+    
     public Node getLeftNode() 
     {
 	if(left != null) return left;
 	return null;
     }
 
-    @Override
+    
     public Node getRightNode() 
     {
 	if(right != null) return right;
 	return null;
     }
 
-    @Override
+    
     public Node getParentNode() 
     {
 	if(parent != null) return parent;
@@ -61,7 +61,7 @@ public class Node implements NodeInterface
 	}
     }
 
-    @Override
+    
     public Node search(int value) 
     {
 	try
@@ -106,7 +106,7 @@ public class Node implements NodeInterface
     }
 
     
-    @Override
+    
     public Node remove(int value) 
     {
 	try

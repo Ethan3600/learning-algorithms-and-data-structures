@@ -7,7 +7,6 @@ public class Bst implements BstInterface
 {
     private Node tree = null;
     
-    @Override
     public void insert(int value) 
     {
 	Node node = new Node(value);
@@ -18,7 +17,6 @@ public class Bst implements BstInterface
 	}
     }
 
-    @Override
     public Node find(int value) 
     {
 	if(tree.data != value)
@@ -28,7 +26,6 @@ public class Bst implements BstInterface
 	else return tree;
     }
 
-    @Override
     public void delete(int value) 
     {
 	this.tree = tree.remove(value);
