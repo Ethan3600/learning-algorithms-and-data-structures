@@ -23,7 +23,8 @@ public class BreadthFirstSearchExample
 		/**
 		 * contains all adjacent Nodes in the graph
 		 */
-		public LinkedList<Node> adjacent; 
+		public LinkedList<Node> adjacent;
+		public Node parent; 
 	}
 	
 	public static void Bfs(Node root)
@@ -41,7 +42,8 @@ public class BreadthFirstSearchExample
 			{
 				if(r.visited == false)
 				{
-					n.visited = true;
+					r.visited = true;
+					r.parent = n; 
 					queue.add(r);
 				}
 			}
