@@ -41,11 +41,7 @@ public class FibonacciDynamicProgrammingExample
 		int f = -999;
 		
 		for (int i = 1; i <= n; i++)
-		{
-			// if the fibonacci number was calculated before, return it 
-			if(memo.containsKey(n))
-				return memo.get(n);
-			
+		{	
 			if(i <= 2)
 				f = 1;
 			else
